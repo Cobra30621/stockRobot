@@ -170,26 +170,26 @@ def handle_message(event):
 #        # 推撥ROC
 #        line_bot_api.push_message(uid, TextSendMessage(Technical_Analysis.stock_ROC(usespeak)))
 #        return 0
-#    elif re.match('毛利率大於90％',usespeak): 
-#        usespeak=mongodb.cache_temporary_stock(uid)
-#        line_bot_api.push_message(uid, TextSendMessage('稍等一下, 雲端運算中...'))
-#        # 推撥毛利率大於90％
-#        line_bot_api.push_message(uid,TextSendMessage('毛利率大於90％的股票：\n'+Fundamental_Analysis.gpm()))
-#        return 0
-#    
-#    elif re.match('每股淨值大於100',usespeak): 
-#        usespeak=mongodb.cache_temporary_stock(uid)
-#        line_bot_api.push_message(uid, TextSendMessage('稍等一下, 雲端運算中...'))
-#        # 推撥每股淨值大於100
-#        line_bot_api.push_message(uid,TextSendMessage('每股淨值大於100的股票：\n'+Fundamental_Analysis.pbr()))
-#        return 0
-#    
-#    elif re.match('每股盈餘大於5',usespeak): 
-#        usespeak=mongodb.cache_temporary_stock(uid)
-#        line_bot_api.push_message(uid, TextSendMessage('稍等一下, 雲端運算中...'))
-#        # 推撥每股盈餘大於5
-#        line_bot_api.push_message(uid,TextSendMessage('每股盈餘大於5的股票：\n'+Fundamental_Analysis.eps()))
-#        return 0
+    elif re.match('毛利率大於90％',usespeak): 
+        usespeak=mongodb.cache_temporary_stock(uid)
+        line_bot_api.push_message(uid, TextSendMessage('稍等一下, 雲端運算中...'))
+        # 推撥毛利率大於90％
+        line_bot_api.push_message(uid,TextSendMessage('毛利率大於90％的股票：\n'+Fundamental_Analysis.gpm()))
+        return 0
+    
+    elif re.match('每股淨值大於100',usespeak): 
+        usespeak=mongodb.cache_temporary_stock(uid)
+        line_bot_api.push_message(uid, TextSendMessage('稍等一下, 雲端運算中...'))
+        # 推撥每股淨值大於100
+        line_bot_api.push_message(uid,TextSendMessage('每股淨值大於100的股票：\n'+Fundamental_Analysis.pbr()))
+        return 0
+    
+    elif re.match('每股盈餘大於5',usespeak): 
+        usespeak=mongodb.cache_temporary_stock(uid)
+        line_bot_api.push_message(uid, TextSendMessage('稍等一下, 雲端運算中...'))
+        # 推撥每股盈餘大於5
+        line_bot_api.push_message(uid,TextSendMessage('每股盈餘大於5的股票：\n'+Fundamental_Analysis.eps()))
+        return 0
     # 傳送多重按鈕介面訊息
     elif re.match('技術面分析',usespeak):
         message = TemplateSendMessage(
